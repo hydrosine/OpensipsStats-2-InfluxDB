@@ -9,6 +9,11 @@ This scripts reads output from the get_statistics all command in opensips and pu
 - datagram_ratelimit.rb
 This scripts reads out from the rl_list command and pushes the values to the defined influxdb instance.
 
+# How to use
+Edit the ip/port configuration for opensips mi_datagram and influxdb connection.
+
+Run the script in a screen. so it keeps running even when you close the connection.
+
 # Requirements
 ruby and the following gems, use gem install <name> to install.
 - influxdb
