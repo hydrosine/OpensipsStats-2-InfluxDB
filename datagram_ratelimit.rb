@@ -1,5 +1,6 @@
 #get opensips rl_list information and store it to influxdb.
 #v0.1 - version used for opensips summit. Used on opensips version 2.1
+#v0.2 - improved the output processing to a one liner. Thanks @rbr
 
 require 'opensips/mi'
 require 'influxdb'
