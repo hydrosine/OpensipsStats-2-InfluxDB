@@ -19,16 +19,9 @@ loop do
  #Get the info from opensips datagram
  rl_list = opensips.command('rl_list')
 
- puts rl_list.rawdata
- result = [] 
- rl_list.rawdata.each do |element| 
-  temp_result = {} 
-  element.slice!("PIPE::  ") 
-  element.split(" ").each do |kvpair| 
-   k, v = kvpair.split("=", 2) 
-   temp_result[k] = v 
-  end  
- result << temp_result 
+ #process the output
+ result = rl_list.rawdata.collect do |element|
+  element.sub('PIPE::  ', '').split(' ').collect { |kvpair| kvpair.split('=') }.to_h
  end
 
  #send the values to influxdb.
