@@ -1,5 +1,5 @@
 # OpensipsStats-2-InfluxDB
-Scripts for pushing data from opensips management interface to influxdb. Makes use of the mi_datagram module in opensips.
+Scripts for pushing data from opensips management interface to influxdb. Makes use of the mi_datagram module in opensips. This script can be run on multiple boxes all pushing data to the same InfluxDB. 
 
 There are 2 scripts available.
 
@@ -37,3 +37,6 @@ Have influxdb installed and configure an UDP listener which pushes data into ope
     batch-pending = 10 # number of batches that may be pending in memory
     batch-timeout = "1s" # will flush at least this often even if we haven't hit buffer limit
     read-buffer = 8388608 # UDP Read buffer size, 0 means OS default. UDP listener will fail if set above OS max.```
+    
+# Other Notes
+Use grafana to draw graphs from the data. You can easily build queries in the interface, Select a measurement ie. shmem and use ID and/or HOST in the where part.
