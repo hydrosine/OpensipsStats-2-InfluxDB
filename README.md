@@ -39,4 +39,5 @@ Have influxdb installed and configure an UDP listener which pushes data into ope
     read-buffer = 8388608 # UDP Read buffer size, 0 means OS default. UDP listener will fail if set above OS max.```
     
 # Other Notes
-Use grafana to draw graphs from the data. You can easily build queries in the interface, Select a measurement ie. shmem and use ID and/or HOST in the where part.
+- Use grafana to draw graphs from the data. You can easily build queries in the interface, Select a measurement ie. shmem and use ID and/or HOST in the where part.
+- If you have any suggestions on improving this script or have any questions feel free to open an issue or pull request.
